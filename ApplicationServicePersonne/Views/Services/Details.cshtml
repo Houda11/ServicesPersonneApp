@@ -1,0 +1,35 @@
+﻿@model ApplicationServicePersonne.Models.Service
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Service</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nom_service)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nom_service)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.photo_service)
+        </dt>
+
+        <dd>
+            <img src="~/PhotosServices/@Model.photo_service" />
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_service }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

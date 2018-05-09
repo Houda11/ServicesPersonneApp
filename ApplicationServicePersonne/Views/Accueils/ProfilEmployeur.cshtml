@@ -1,0 +1,589 @@
+﻿@model ApplicationServicePersonne.Models.Employeur
+
+@{
+    ViewBag.Title = "ProfilEmployeur";
+    Layout = "~/Views/Shared/_LayoutProfil.cshtml";
+}
+
+
+
+
+
+<main id="tg-main" class="tg-main tg-haslayout tg-paddingzero">
+    <div class="tg-serviceprovider tg-detailpage tg-serviceproviderdetail">
+        <div class="tg-detailpagehead">
+            <figure>
+                
+                <img src="~/Content/MyTemplate/images/profilpic.jpg" />
+                <figcaption>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="tg-detailpageheadcontent">
+                                    <div class="tg-companylogo"><img src="~/Photos/@Model.photo_employeur" /></div>
+                                    <div class="tg-companycontent">
+                                        <ul class="tg-tags">
+
+                                            <li><a class="tg-tag tg-verifiedtag" href="#">vérifié</a></li>
+                                        </ul>
+
+                                        <div class="tg-title">
+                                            <h1>@Html.DisplayFor(model => model.nom_employeur)</h1>
+                                            @{ViewBag.nomemp = Model.nom_employeur;}
+                                            @{ViewBag.prenomemp = Model.prenom_employeur; }
+                                            <span>Description</span>
+                                        </div>
+                                        <ul class="tg-matadata">
+                                            <li><span class="tg-stars"><span></span></span></li>
+                                            <li>
+                                                <i class="fa fa-thumbs-o-up"></i>
+                                                <em>(Votes)</em>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <button class="tg-btn" type="button" data-toggle="modal" data-target=".tg-appointmentModal">Rendez-vous</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="tg-companynameandviews">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                        <h2> @Html.DisplayFor(model => model.Service.nom_service)</h2>
+                        <span class="tg-totalsviews">
+                            <i class="fa fa-eye"></i>
+                            <i>nombre de vu</i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tg-twocolumns" class="tg-twocolumns">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8 pull-left">
+                        <div id="tg-content" class="tg-content">
+                            <div class="tg-companyfeatures">
+                               
+                                <!-- Début : Les services fournis par le candidat -->
+                                <div class="tg-companyfeaturebox tg-services">
+                                    <div class="tg-companyfeaturetitle">
+                                        <h3>Services</h3>
+                                    </div>
+                                    <!--Bech twali Dynamique-->
+                                    <div id="tg-accordion" class="tg-accordion">
+                                        <div class="tg-service tg-panel">
+                                            <div class="tg-accordionheading"><h4><span> @Html.DisplayFor(model => model.titre_serv_emp)</span><span> @Html.DisplayFor(model => model.prix)</span></h4></div>
+                                            <div class="tg-panelcontent">
+                                                <div class="tg-description">
+                                                    <p> @Html.DisplayFor(model => model.desc_serv_emp).</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Fin : Les services fournis par le candidat -->
+
+                                <div class="tg-companyfeaturebox tg-reviews">
+                                    <div class="tg-companyfeaturetitle">
+                                        <h3>Evaluations</h3>
+                                    </div>
+                                    <!--Bech twali Dynamique-->
+                                    <div class="tg-feedbacks">
+
+                                        <div class="tg-feedback">
+                                            <figure><a href="javascript:void(0);"><img src="~/Photos/@Model.photo_employeur"></a></figure>
+                                            <div class="tg-feedbackcontent">
+                                                <div class="tg-feedbackbox">
+                                                    <div class="tg-contenthead">
+                                                        <div class="tg-leftbox">
+                                                            <div class="tg-name">
+                                                                <h4><a href="#">Sensation &amp; Pain in PMT</a></h4>
+                                                            </div>
+                                                            <ul class="tg-matadata">
+                                                                <li><a href="#">Edward Coldiron</a></li>
+                                                                <li><a href="#">10 Min Ago</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="tg-overallratingbox">
+                                                            <span class="tg-stars"><span></span></span>
+                                                            <div class="tg-overallratingarea">
+                                                                <i class="fa fa-exclamation-circle"></i>
+                                                                <div class="tg-overallrating">
+                                                                    <ul class="tg-servicesrating">
+                                                                        <li>
+                                                                            <span class="tg-stars"><span></span></span>
+                                                                            <em>Ease of Appointment</em>
+                                                                        </li>
+                                                                        <li>
+                                                                            <span class="tg-stars"><span></span></span>
+                                                                            <em>Promptness</em>
+                                                                        </li>
+                                                                        <li>
+                                                                            <span class="tg-stars"><span></span></span>
+                                                                            <em>Courteous Staff</em>
+                                                                        </li>
+                                                                        <li>
+                                                                            <span class="tg-stars"><span></span></span>
+                                                                            <em>Accurate Diagnosis</em>
+                                                                        </li>
+                                                                        <li>
+                                                                            <span class="tg-stars"><span></span></span>
+                                                                            <em>Professional Manner</em>
+                                                                        </li>
+                                                                        <li>
+                                                                            <span class="tg-stars"><span></span></span>
+                                                                            <em>Spends Time with Me</em>
+                                                                        </li>
+                                                                        <li>
+                                                                            <span class="tg-stars"><span></span></span>
+                                                                            <em>Follows Up After Visit</em>
+                                                                        </li>
+                                                                        <li>
+                                                                            <span class="tg-stars"><span></span></span>
+                                                                            <em>Work Knowledge</em>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tg-description">
+                                                        <p>Cliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip modoia aiat irure dolor in reprehenderit in.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tg-btnbox">
+                                        <a class="tg-btn tg-btnloadmore" href="javascript:void(0);">Charger plus</a>
+                                    </div>
+                                </div>
+                                <div class="tg-companyfeaturebox tg-reviewformrating">
+                                    <form class="tg-themeform tg-formleavefeedback">
+                                        <fieldset>
+                                            <div class="row">
+                                                <!-- Début : Commantaire -->
+                                                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                                                    <div class="tg-companyfeaturetitle">
+                                                        <h3>Laissez votre avis</h3>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Temps d'attente total: </label>
+                                                        <span class="tg-select">
+                                                            <select>
+                                                                <option>15 Minutes</option>
+                                                                <option>30 Minutes</option>
+                                                                <option>45 Minutes</option>
+                                                            </select>
+                                                        </span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="tg-reviewtitle">
+                                                            <input type="text" name="reviewtitle" class="form-control" placeholder="Titre du commentaire">
+                                                        </div>
+                                                        <div class="tg-recommendedradio">
+                                                            <span class="tg-radio">
+                                                                <input type="radio" id="yes" name="recommended" value="yes" checked>
+                                                                <label for="yes"><i class="fa fa-thumbs-o-up"></i>Oui</label>
+                                                            </span>
+                                                            <span class="tg-radio">
+                                                                <input type="radio" id="no" name="recommended" value="no">
+                                                                <label for="no"><i class="fa fa-thumbs-o-down"></i>Non</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" placeholder="Description"></textarea>
+                                                    </div>
+                                                    <button type="submit" class="tg-btn">Envoyer</button>
+                                                </div>
+                                                <!-- Fin : Commantaire -->
+                                                <!--**************************	-->
+                                                <!-- Début : Note -->
+                                                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                                                    <div class="tg-companyfeaturetitle">
+                                                        <h3>Laissez votre note</h3>
+                                                    </div>
+                                                    <ul class="tg-servicesrating">
+                                                        <li>
+                                                            <em>Facilité de rendez-vous</em>
+                                                            <span class="tg-stars"><span></span></span>
+                                                        </li>
+                                                        <li>
+                                                            <em>Promptitude</em>
+                                                            <span class="tg-stars"><span></span></span>
+                                                        </li>
+                                                        <li>
+                                                            <em>Personnel courtois</em>
+                                                            <span class="tg-stars"><span></span></span>
+                                                        </li>
+                                                        <li>
+                                                            <em>Diagnostic précis</em>
+                                                            <span class="tg-stars"><span></span></span>
+                                                        </li>
+                                                        <li>
+                                                            <em>Manière professionnelle</em>
+                                                            <span class="tg-stars"><span></span></span>
+                                                        </li>
+                                                        <li>
+                                                            <em>Passe du temps avec moi</em>
+                                                            <span class="tg-stars"><span></span></span>
+                                                        </li>
+                                                        <li>
+                                                            <em>Suit après la visite</em>
+                                                            <span class="tg-stars"><span></span></span>
+                                                        </li>
+                                                        <li>
+                                                            <em>travail du savoir</em>
+                                                            <span class="tg-stars"><span></span></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- Fin : Note -->
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4 pull-right">
+                        <aside id="tg-sidebar" class="tg-sidebar">
+                            <div class="tg-widget tg-widgetlocationandcontactinfo">
+                                <div class="tg-mapbox">
+                                    <div id="tg-locationmap" class="tg-locationmap"></div>
+                                </div>
+                                <div class="tg-contactinfobox">
+                                    <ul class="tg-contactinfo">
+                                        <li>
+                                            <i class="lnr lnr-location"></i>
+                                            <address>Abc tower, xyz street UK, HG521A</address>
+                                        </li>
+                                        <li>
+                                            <i class="lnr lnr-phone-handset"></i>
+                                            <span>0800 - 1234 - 562 - 6</span>
+                                        </li>
+                                        <li>
+                                            <i class="lnr lnr-printer"></i>
+                                            <span>+4 1234 567 - 9</span>
+                                        </li>
+                                        <li>
+                                            <i class="lnr lnr-envelope"></i>
+                                            <span><a href="mailto:query@domain.com">query@domain.com</a></span>
+                                        </li>
+                                        <li>
+                                            <i class="lnr lnr-construction"></i>
+                                            <span><a href="mailto:complaint@domain.com">complaint@domain.com</a></span>
+                                        </li>
+                                        <li>
+                                            <i class="lnr lnr-screen"></i>
+                                            <span><a href="www.domainurl.com" target="_blank">www.domainurl.com</a></span>
+                                        </li>
+                                    </ul>
+                                    <ul class="tg-socialicons">
+                                        <li class="tg-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="tg-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="tg-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li class="tg-googleplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li class="tg-rss"><a href="#"><i class="fa fa-rss"></i></a></li>
+                                    </ul>
+                                    <a class="tg-btn tg-btn-lg" href="javascript:void(0);">Obtenir la direction</a>
+                                </div>
+                            </div>
+                            <div class="tg-widget tg-widgetcontact">
+                                <div class="tg-widgettitle">
+                                    <h3>Formulaire de contact</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <form class="tg-themeform">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="text" placeholder="Nom">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email" placeholder="Adresse E-mail">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="phone" placeholder="Mobile">
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Votre Message"></textarea>
+                                            </div>
+                                            <button class="tg-btn tg-btn-lg" type="submit">Envoyer</button>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tg-widget tg-widgetbusinesshours">
+                                <div class="tg-widgettitle">
+                                    <h3>Heures de travail</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul>
+                                        <li id="sh-MON">
+                                            <span class="tg-dayname">Lundi</span>
+                                            <div class="tg-timebox">
+                                                <i class="lnr lnr-clock"></i>
+                                                <time datetime="2016-10-10">09:00 AM - 05:00 PM</time>
+                                            </div>
+                                            <div class="tg-timebox">
+                                                <i class="lnr lnr-clock"></i>
+                                                <time datetime="2016-10-10">05:00 PM - 12:00 PM</time>
+                                            </div>
+                                            <div class="tg-timebox">
+                                                <i class="lnr lnr-clock"></i>
+                                                <time datetime="2016-10-10">12:00 AM - 09:00 AM</time>
+                                            </div>
+                                        </li>
+                                        <li id="sh-TUE">
+                                            <span class="tg-dayname">Mardi</span>
+                                            <div class="tg-timebox">
+                                                <i class="lnr lnr-clock"></i>
+                                                <time datetime="2016-10-10">09:00 AM - 05:00 PM</time>
+                                            </div>
+                                            <div class="tg-timebox">
+                                                <i class="lnr lnr-clock"></i>
+                                                <time datetime="2016-10-10">05:00 PM - 12:00 PM</time>
+                                            </div>
+                                        </li>
+                                        <li id="sh-WED">
+                                            <span class="tg-dayname">Mercredi</span>
+                                            <div class="tg-timebox">
+                                                <i class="lnr lnr-clock"></i>
+                                                <time datetime="2016-10-10">09:00 AM - 05:00 PM</time>
+                                            </div>
+                                        </li>
+                                        <li id="sh-THU">
+                                            <span class="tg-dayname">Jeudi</span>
+                                            <div class="tg-timebox">
+                                                <i class="lnr lnr-clock"></i>
+                                                <time datetime="2016-10-10">05:00 PM - 12:00 PM</time>
+                                            </div>
+                                        </li>
+                                        <li id="sh-FRI">
+                                            <span class="tg-dayname">Vendredi</span>
+                                            <div class="tg-timebox">
+                                                <i class="lnr lnr-clock"></i>
+                                                <time datetime="2016-10-10">12:00 AM - 09:00 AM</time>
+                                            </div>
+                                        </li>
+                                        <li id="sh-SAT">
+                                            <span class="tg-dayname">Samedi</span>
+                                            <div class="tg-timebox">
+                                                <i class="lnr lnr-clock"></i>
+                                                <time datetime="2016-10-10">09:00 AM - 05:00 PM</time>
+                                            </div>
+                                        </li>
+                                        <li id="sh-SUN">
+                                            <span class="tg-dayname">Dimanche</span>
+                                            <div class="tg-timebox">
+                                                <i class="lnr lnr-lock"></i>
+                                                <time datetime="2016-10-10">Urgence seulement (fermé)</time>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tg-widget tg-widgetbrochure">
+                                <div class="tg-widgettitle">
+                                    <h3>Télécharger la brochure</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <a class="tg-btndownload" href="javascript:void(0);">
+                                        <i class="fa fa-file-pdf-o"></i>
+                                        <span>2017 Document.pdf</span>
+                                        <i class="lnr lnr-download"></i>
+                                    </a>
+                                    <a class="tg-btndownload" href="javascript:void(0);">
+                                        <i class="fa fa-file-pdf-o"></i>
+                                        <span>2016 Document.pdf</span>
+                                        <i class="lnr lnr-download"></i>
+                                    </a>
+                                    <a class="tg-btndownload" href="javascript:void(0);">
+                                        <i class="fa fa-file-pdf-o"></i>
+                                        <span>2015 Document.pdf</span>
+                                        <i class="lnr lnr-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tg-widget tg-widgetshare">
+                                <div class="tg-widgettitle">
+                                    <h3>Partager</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul class="tg-socialicons">
+                                        <li class="tg-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="tg-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="tg-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li class="tg-googleplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="tg-widget tg-widgetclaim">
+                                <div class="tg-widgettitle">
+                                    <h3>Rapport / formulaire <br> de réclamation</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <form class="tg-themeform">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="text" placeholder="Sujet du rapport">
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Détail"></textarea>
+                                            </div>
+                                            <button class="tg-btn tg-btn-lg" type="submit">Signaler maintenant</button>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nom_employeur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nom_employeur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prenom_employeur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prenom_employeur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.photo_employeur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.photo_employeur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email_employeur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email_employeur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexe_employeur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexe_employeur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mobile_employeur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mobile_employeur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ville)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ville)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.disponibilité_emp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.disponibilité_emp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password_employeur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password_employeur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.titre_serv_emp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.titre_serv_emp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.desc_serv_emp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.desc_serv_emp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Service.nom_service)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service.nom_service)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditProfilEmployeur", new { id = Model.id_employeur })
+    
+</p>

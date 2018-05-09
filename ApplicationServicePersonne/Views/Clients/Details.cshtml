@@ -1,0 +1,74 @@
+﻿@model ApplicationServicePersonne.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nom_client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nom_client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prenom_client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prenom_client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.photo_client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.photo_client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email_client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email_client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexe_client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexe_client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mobile_client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mobile_client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password_client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password_client)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_client }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

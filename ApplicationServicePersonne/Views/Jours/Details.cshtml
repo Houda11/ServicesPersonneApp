@@ -1,0 +1,34 @@
+﻿@model ApplicationServicePersonne.Models.Jour
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Jour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nom_jour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nom_jour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.disponibilité_jour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.disponibilité_jour)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_jour }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

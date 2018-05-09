@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b25cd2fe5014403eb45aca0a0f5af401" Name="Diagram1" ZoomLevel="53">
+        <EntityTypeShape EntityType="PersonneServiceModel.Admin" Width="1.5" PointX="8.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Avi" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Client" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Contact_admin" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Employeur" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Fichier" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Heure_travail" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Historique_client" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Jour" Width="1.5" PointX="6" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Message" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Note" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Reclamation" Width="1.5" PointX="8.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Rendez_vous" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Service" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonneServiceModel.Type_note" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Contact_admin_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Avis_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Avis_Employeur" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Historique_client_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Message_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Note_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Reclamation_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Rendez_vous_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Employeur_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Fichier_Employeur" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Heure_travail_Employeur" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Message_Employeur" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Note_Employeur" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Reclamation_Employeur" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Rendez_vous_Employeur" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Heure_travail_Jour" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonneServiceModel.FK_Note_Type_note" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

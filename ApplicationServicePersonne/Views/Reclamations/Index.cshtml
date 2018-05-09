@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ApplicationServicePersonne.Models.Reclamation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sujet_reclam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.detail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Admin.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employeur.nom_employeur)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sujet_reclam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.detail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Admin.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employeur.nom_employeur)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_reclamation }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_reclamation }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_reclamation })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,152 @@
+﻿@model IEnumerable<ApplicationServicePersonne.Models.Service>
+
+@using System
+@{
+    ViewBag.Title = "Accueil";
+    Layout = "~/Views/Shared/_MyLayoutSAP.cshtml";
+}
+
+
+
+<div class="tg-detailpagehead">
+
+    <figure>
+
+        <img src=@Url.Content("~/content/MyTemplate/images/Acceuilservices1.png") alt="header">
+
+        <figcaption>
+
+            <div class="tg-mapinnerbanner">
+
+                <div class="tg-searchbox">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-lg-push-1">
+
+
+                                <form class="tg-themeform tg-formsearch" action="@Url.Action("Liste_recherche", "Accueils")" method="POST" enctype="multipart/form-data">
+                                    <fieldset>
+
+                                        <div class="form-group">
+                                            <input type="text" name="MotCle" class="form-control" placeholder="Mot-clé">
+                                        </div>
+                                        <div class="form-group tg-inputwithicon">
+                                            <div class="locate-me-wrap">
+                                                <div id="location-pickr-map" class="elm-display-none"></div>
+                                                <input type="text" autocomplete="on" id="location-address" value="" name="geo_location" placeholder="Geo location" class="form-control">
+                                                <a href="javascript:;" class="geolocate"><i class="fa fa-crosshairs"></i></a>
+
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="tg-select">
+                                                <select name="nomservice">
+                                                    <option >Catégorie</option>
+                                                    <option value="Maintenance De Voiture">Maintenance de voiture</option>
+                                                    <option value="Construction & Renovation">Construction &amp; Renovation</option>
+                                                    <option value="Menuisier En General">Menuisier en General</option>
+                                                    <option value="Garde D'enfant">Garde D'enfant</option>
+                                                    <option value="Ménage">Ménage</option>
+                                                    <option value="Transportation & Management">Transportation &amp; management</option>
+                                                    <option value="Plombier">Plombier</option>
+                                                    <option value="Electricité Maison">Electricité Maison</option>
+                                                    <option value="Décoration">Décoration</option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                        <button class="tg-btn" type="submit"> <i class="lnr lnr-magnifier"></i></button>
+                                        <!--<button class="tg-btn" type="button" name="btnrecherche" onclick="location.href='@Url.Action("Liste_recherche", "Accueils")'"> <i class="lnr lnr-magnifier"></i></button>-->
+
+
+                                    </fieldset>
+                                </form>
+                                <img src=@Url.Content("~/content/MyTemplate/images/slogon.png")>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </figcaption>
+    </figure>
+
+
+
+</div>
+
+<section id="section" class="demo">
+
+    <a href="#tg-main"><img src=@Url.Content("~/content/MyTemplate/images/flech.png")></a>
+</section>
+
+
+<main id="tg-main" class="tg-main tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div id="tg-content" class="tg-content">
+                <div class="tg-sectiontitle">
+                    <h2>Catégories des services</h2>
+                </div>
+
+                @foreach (var item in Model)
+                {
+
+                   // var nomserviceAcc = item.nom_service;
+
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                        <div class="tg-topcategories">
+                            <div class="tg-category">
+                                <figure>
+                                    <img src="~/PhotosServices/@item.photo_service" alt="image description">
+                                    <figcaption class="tg-automotive">
+                                        <!-- <span class="lnr lnr-car tg-categoryicon"></span>-->
+                                        <span class="tg-categoryname">@item.nom_service</span>
+                                        
+                                        <a href="Liste_recherche()" class="tg-themetag tg-tagjobcount">
+                                            <i class="fa fa-clone"></i>
+                                            <em>
+                                                @if (0 == 0)
+                                                {
+                                                    int nb = 0;
+                                                    foreach (var se in ViewBag.ids_services_emp)
+                                                    {
+
+                                                        if (item.id_service == se)
+                                                        {
+
+                                                            nb = nb + 1;
+
+
+                                                        }
+                                                        ViewBag.nbse = nb;
+                                                    }
+                                                }
+
+                                                @ViewBag.nbse
+
+                                            </em>
+                                        </a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+

@@ -1,0 +1,42 @@
+﻿@model ApplicationServicePersonne.Models.Fichier
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Fichier</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nom_fichier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nom_fichier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fichier1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fichier1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employeur.nom_employeur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employeur.nom_employeur)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_fichier }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

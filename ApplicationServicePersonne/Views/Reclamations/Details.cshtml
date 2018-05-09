@@ -1,0 +1,58 @@
+﻿@model ApplicationServicePersonne.Models.Reclamation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reclamation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sujet_reclam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sujet_reclam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.detail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.detail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Admin.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admin.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employeur.nom_employeur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employeur.nom_employeur)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_reclamation }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
